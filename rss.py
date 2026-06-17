@@ -55,10 +55,9 @@ def scrape():
         except sqlite3.IntegrityError:
             print(f"Zaten mevcut: {bolum_ad_yeni}")
     vt.close()
-
-if __name__ == "__main__":
-    try:
-        veritabani_hazirla()
-        scrape()
-    except Exception as e:
-        print(f"Hata:{e}")
+while True:
+        try:
+            veritabani_hazirla()
+            scrape()
+        except Exception as e:
+            print(f"Hata:{e}")
